@@ -1,0 +1,62 @@
+/*
+ * Motor.c
+ *
+ *  Created on: Apr 14, 2024
+ *      Author: myhg1
+ */
+#include "Motor.h"
+
+void manualDriveStart(TIM_HandleTypeDef* htim4,int16_t xAxis, int16_t yAxis){
+	xAxis = xAxis - 2118;
+	yAxis = yAxis - 2068;
+	//ccr1 left, ccr2 right
+	//left wheel
+	if(yAxis> 100){
+		rightDriveForward();
+		htim4->Instance->CCR2 = map(abs(yAxis),100,2100,0,65535);
+	}
+	else if(yAxis<-100){
+		leftDriveBackward();
+		htim4->Instance->CCR1 = map(abs(yAxis),100,2100,0,65535);
+	}
+
+	//Right wheel
+	if(xAxis> 100){
+		leftDriveForward();
+		htim4->Instance->CCR1 = map(abs(xAxis),100,2200,0,65535);
+	}
+	else if(xAxis<-100){
+		rightDriveBackward();
+		htim4->Instance->CCR2 = map(abs(xAxis),100,2200,0,65535);
+	}
+}
+
+void MoveStop(TIM_HandleTypeDef* htim){
+	htim->Instance->CCR1 = 0;
+	htim->Instance->CCR2 = 0;
+}
+
+void rightDriveForward(){
+	HAL_GPIO_WritePin(Left_IN3_GPIO_Port, Left_IN3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Left_IN4_GPIO_Port, Left_IN4_Pin, GPIO_PIN_SET);
+}
+
+void leftDriveForward(){
+	HAL_GPIO_WritePin(Right_IN1_GPIO_Port, Right_IN1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Right_IN2_GPIO_Port, Right_IN2_Pin, GPIO_PIN_RESET);
+}
+
+void rightDriveBackward(){
+	HAL_GPIO_WritePin(Left_IN3_GPIO_Port, Left_IN3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Left_IN4_GPIO_Port, Left_IN4_Pin, GPIO_PIN_RESET);
+}
+
+void leftDriveBackward(){
+	HAL_GPIO_WritePin(Right_IN1_GPIO_Port, Right_IN1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Right_IN2_GPIO_Port, Right_IN2_Pin, GPIO_PIN_SET);
+}
+
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+

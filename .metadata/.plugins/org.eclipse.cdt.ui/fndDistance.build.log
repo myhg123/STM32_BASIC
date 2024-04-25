@@ -1,0 +1,10 @@
+15:49:51 **** Incremental Build of configuration Debug for project fndDistance ****
+make -j16 all 
+arm-none-eabi-size  fndDistance.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13732	     36	   1740	  15508	   3c94	fndDistance.elf
+Finished building: default.size.stdout
+ 
+
+15:49:51 Build Finished. 0 errors, 0 warnings. (took 277ms)
+

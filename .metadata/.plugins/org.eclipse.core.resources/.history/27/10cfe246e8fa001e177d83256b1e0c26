@@ -1,0 +1,17 @@
+/*
+ * autoMove.h
+ *
+ *  Created on: Apr 15, 2024
+ *      Author: kccistc
+ */
+
+#ifndef INC_AUTOMOVE_H_
+#define INC_AUTOMOVE_H_
+
+#include "main.h"
+#include <stdlib.h>
+
+void initAutoMove(TIM_HandleTypeDef* htim4);
+void ultraSonicAutoMove(uint16_t L_dist, uint16_t C_dist, uint16_t R_dist, TIM_HandleTypeDef* htim4);
+
+#endif /* INC_AUTOMOVE_H_ */

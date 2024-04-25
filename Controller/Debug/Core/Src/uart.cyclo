@@ -1,0 +1,8 @@
+../Core/Src/uart.c:30:6:initUart1	1
+../Core/Src/uart.c:34:6:initUart2	1
+../Core/Src/uart.c:38:6:initUart3	1
+../Core/Src/uart.c:45:6:HAL_UART_RxCpltCallback	4
+../Core/Src/uart.c:64:9:getChar1	2
+../Core/Src/uart.c:73:9:getChar2	2
+../Core/Src/uart.c:82:9:getChar3	2
+../Core/Src/uart.c:91:5:_write	1

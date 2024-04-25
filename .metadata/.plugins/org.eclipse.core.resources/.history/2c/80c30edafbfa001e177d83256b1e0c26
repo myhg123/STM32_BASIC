@@ -1,0 +1,28 @@
+/*
+ * led.c
+ *
+ *  Created on: Apr 15, 2024
+ *      Author: kccistc
+ */
+
+#include "led.h"
+
+void manualModeLed(){
+	HAL_GPIO_WritePin(manual_GPIO_Port, manual_Pin, 1);
+	HAL_GPIO_WritePin(auto_GPIO_Port, auto_Pin, 0);
+	HAL_GPIO_WritePin(suddenly_GPIO_Port, suddenly_Pin, 0);
+}
+
+void autoModeLed(){
+	HAL_GPIO_WritePin(manual_GPIO_Port, manual_Pin, 1);
+	HAL_GPIO_WritePin(auto_GPIO_Port, auto_Pin, 1);
+	HAL_GPIO_WritePin(suddenly_GPIO_Port, suddenly_Pin, 0);
+}
+
+void suddenlyModeLed(){
+	HAL_GPIO_WritePin(manual_GPIO_Port, manual_Pin, 0);
+	HAL_GPIO_WritePin(auto_GPIO_Port, auto_Pin, 0);
+	HAL_GPIO_WritePin(suddenly_GPIO_Port, suddenly_Pin, 1);
+}
+
+

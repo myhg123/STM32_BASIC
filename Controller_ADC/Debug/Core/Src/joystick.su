@@ -1,0 +1,4 @@
+../Core/Src/joystick.c:8:6:dataToBlue	16	static
+../Core/Src/joystick.c:13:6:adcData_Filt	24	static
+../Core/Src/joystick.c:25:6:dataTransmit	32	static
+../Core/Src/joystick.c:70:6:adcDataMaxMin	16	static

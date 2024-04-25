@@ -1,0 +1,351 @@
+09:31:31 **** Incremental Build of configuration Debug for project Controller_ADC ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/joystick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/joystick.d" -MT"Core/Src/joystick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/joystick.o"
+../Core/Src/joystick.c: In function 'adcData_Filt':
+../Core/Src/joystick.c:20:23: warning: passing argument 1 of 'adcDataMaxMin' from incompatible pointer type [-Wincompatible-pointer-types]
+   20 |         adcDataMaxMin(&Xfilt);
+      |                       ^~~~~~
+      |                       |
+      |                       uint16_t ** {aka short unsigned int **}
+In file included from ../Core/Src/joystick.c:7:
+../Core/Inc/joystick.h:24:30: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint16_t **' {aka 'short unsigned int **'}
+   24 | void adcDataMaxMin(uint16_t *data);
+      |                    ~~~~~~~~~~^~~~
+../Core/Src/joystick.c:21:23: warning: passing argument 1 of 'adcDataMaxMin' from incompatible pointer type [-Wincompatible-pointer-types]
+   21 |         adcDataMaxMin(&Yfilt);
+      |                       ^~~~~~
+      |                       |
+      |                       uint16_t ** {aka short unsigned int **}
+In file included from ../Core/Src/joystick.c:7:
+../Core/Inc/joystick.h:24:30: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint16_t **' {aka 'short unsigned int **'}
+   24 | void adcDataMaxMin(uint16_t *data);
+      |                    ~~~~~~~~~~^~~~
+../Core/Src/joystick.c: In function 'dataTransmit':
+../Core/Src/joystick.c:64:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   64 |         printf("%c,%c,%d,%d,%d,%d,%d\n",STX,ETX,tx_data1,tx_data2,tx_data3,tx_data4,chksum);
+      |         ^~~~~~
+../Core/Src/joystick.c:8:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    7 | #include "joystick.h"
+  +++ |+#include <stdio.h>
+    8 | void dataToBlue(uint8_t data){
+../Core/Src/joystick.c:64:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   64 |         printf("%c,%c,%d,%d,%d,%d,%d\n",STX,ETX,tx_data1,tx_data2,tx_data3,tx_data4,chksum);
+      |         ^~~~~~
+../Core/Src/joystick.c:64:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "Controller_ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Controller_ADC\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Controller_ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Controller_ADC.elf
+ 
+arm-none-eabi-size  Controller_ADC.elf 
+arm-none-eabi-objdump -h -S Controller_ADC.elf  > "Controller_ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+  33648	    136	   2424	  36208	   8d70	Controller_ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Controller_ADC.list
+ 
+09:31:37 **** Incremental Build of configuration Debug for project Controller_ADC ****
+make -j16 all 
+arm-none-eabi-size  Controller_ADC.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33648	    136	   2424	  36208	   8d70	Controller_ADC.elf
+Finished building: default.size.stdout
+ 
+09:33:43 **** Incremental Build of configuration Debug for project Drive_Body ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function '_write':
+../Core/Src/main.c:94:39: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit_IT' differ in signedness [-Wpointer-sign]
+   94 |         HAL_UART_Transmit_IT(&huart2, p, len);
+      |                                       ^
+      |                                       |
+      |                                       char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:747:82: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  747 | HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:164:17: warning: implicit declaration of function 'horn_Run'; did you mean 'hornSound'? [-Wimplicit-function-declaration]
+  164 |                 horn_Run(controlData.hornData);
+      |                 ^~~~~~~~
+      |                 hornSound
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:667:6: warning: conflicting types for 'horn_Run'; have 'void(uint8_t)' {aka 'void(unsigned char)'}
+  667 | void horn_Run(uint8_t hornState){
+      |      ^~~~~~~~
+../Core/Src/main.c:164:17: note: previous implicit declaration of 'horn_Run' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+  164 |                 horn_Run(controlData.hornData);
+      |                 ^~~~~~~~
+arm-none-eabi-gcc -o "Drive_Body.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Drive_Body\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drive_Body.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drive_Body.elf
+ 
+arm-none-eabi-size  Drive_Body.elf 
+arm-none-eabi-objdump -h -S Drive_Body.elf  > "Drive_Body.list"
+   text	   data	    bss	    dec	    hex	filename
+  48168	    168	   2600	  50936	   c6f8	Drive_Body.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drive_Body.list
+ 
+09:55:23 **** Incremental Build of configuration Debug for project Drive_Body ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function '_write':
+../Core/Src/main.c:94:39: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit_IT' differ in signedness [-Wpointer-sign]
+   94 |         HAL_UART_Transmit_IT(&huart2, p, len);
+      |                                       ^
+      |                                       |
+      |                                       char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:747:82: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  747 | HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:158:17: warning: implicit declaration of function 'horn_Run'; did you mean 'hornSound'? [-Wimplicit-function-declaration]
+  158 |                 horn_Run(controlData.hornData);
+      |                 ^~~~~~~~
+      |                 hornSound
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:661:6: warning: conflicting types for 'horn_Run'; have 'void(uint8_t)' {aka 'void(unsigned char)'}
+  661 | void horn_Run(uint8_t hornState){
+      |      ^~~~~~~~
+../Core/Src/main.c:158:17: note: previous implicit declaration of 'horn_Run' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+  158 |                 horn_Run(controlData.hornData);
+      |                 ^~~~~~~~
+arm-none-eabi-gcc -o "Drive_Body.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Drive_Body\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drive_Body.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drive_Body.elf
+ 
+arm-none-eabi-size  Drive_Body.elf 
+arm-none-eabi-objdump -h -S Drive_Body.elf  > "Drive_Body.list"
+   text	   data	    bss	    dec	    hex	filename
+  48520	    168	   2600	  51288	   c858	Drive_Body.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drive_Body.list
+ 
+10:01:56 **** Incremental Build of configuration Debug for project Controller_ADC ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/joystick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/joystick.d" -MT"Core/Src/joystick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/joystick.o"
+../Core/Src/joystick.c: In function 'adcData_Filt':
+../Core/Src/joystick.c:20:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   20 |         printf("%d,%d,%d,%d\n",buf[0],buf[1],*Xfilt,*Yfilt);
+      |         ^~~~~~
+../Core/Src/joystick.c:8:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    7 | #include "joystick.h"
+  +++ |+#include <stdio.h>
+    8 | void dataToBlue(uint8_t data){
+../Core/Src/joystick.c:20:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   20 |         printf("%d,%d,%d,%d\n",buf[0],buf[1],*Xfilt,*Yfilt);
+      |         ^~~~~~
+../Core/Src/joystick.c:20:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/joystick.c:22:23: warning: passing argument 1 of 'adcDataMaxMin' from incompatible pointer type [-Wincompatible-pointer-types]
+   22 |         adcDataMaxMin(&Xfilt);
+      |                       ^~~~~~
+      |                       |
+      |                       uint16_t ** {aka short unsigned int **}
+In file included from ../Core/Src/joystick.c:7:
+../Core/Inc/joystick.h:24:30: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint16_t **' {aka 'short unsigned int **'}
+   24 | void adcDataMaxMin(uint16_t *data);
+      |                    ~~~~~~~~~~^~~~
+../Core/Src/joystick.c:23:23: warning: passing argument 1 of 'adcDataMaxMin' from incompatible pointer type [-Wincompatible-pointer-types]
+   23 |         adcDataMaxMin(&Yfilt);
+      |                       ^~~~~~
+      |                       |
+      |                       uint16_t ** {aka short unsigned int **}
+In file included from ../Core/Src/joystick.c:7:
+../Core/Inc/joystick.h:24:30: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint16_t **' {aka 'short unsigned int **'}
+   24 | void adcDataMaxMin(uint16_t *data);
+      |                    ~~~~~~~~~~^~~~
+../Core/Src/joystick.c: In function 'dataTransmit':
+../Core/Src/joystick.c:66:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   66 |         printf("%c,%c,%d,%d,%d,%d,%d\n",STX,ETX,tx_data1,tx_data2,tx_data3,tx_data4,chksum);
+      |         ^~~~~~
+../Core/Src/joystick.c:66:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "Controller_ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Controller_ADC\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Controller_ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Controller_ADC.elf
+ 
+arm-none-eabi-size  Controller_ADC.elf 
+arm-none-eabi-objdump -h -S Controller_ADC.elf  > "Controller_ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+  33704	    136	   2424	  36264	   8da8	Controller_ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Controller_ADC.list
+ 
+10:03:15 **** Incremental Build of configuration Debug for project Controller_ADC ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/joystick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/joystick.d" -MT"Core/Src/joystick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/joystick.o"
+../Core/Src/joystick.c: In function 'adcData_Filt':
+../Core/Src/joystick.c:20:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   20 |         printf("%d,%d,%d,%d\n",buf[0],buf[1],*Xfilt,*Yfilt);
+      |         ^~~~~~
+../Core/Src/joystick.c:8:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    7 | #include "joystick.h"
+  +++ |+#include <stdio.h>
+    8 | void dataToBlue(uint8_t data){
+../Core/Src/joystick.c:20:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   20 |         printf("%d,%d,%d,%d\n",buf[0],buf[1],*Xfilt,*Yfilt);
+      |         ^~~~~~
+../Core/Src/joystick.c:20:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/joystick.c:22:23: warning: passing argument 1 of 'adcDataMaxMin' from incompatible pointer type [-Wincompatible-pointer-types]
+   22 |         adcDataMaxMin(&Xfilt);
+      |                       ^~~~~~
+      |                       |
+      |                       uint16_t ** {aka short unsigned int **}
+In file included from ../Core/Src/joystick.c:7:
+../Core/Inc/joystick.h:24:30: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint16_t **' {aka 'short unsigned int **'}
+   24 | void adcDataMaxMin(uint16_t *data);
+      |                    ~~~~~~~~~~^~~~
+../Core/Src/joystick.c:23:23: warning: passing argument 1 of 'adcDataMaxMin' from incompatible pointer type [-Wincompatible-pointer-types]
+   23 |         adcDataMaxMin(&Yfilt);
+      |                       ^~~~~~
+      |                       |
+      |                       uint16_t ** {aka short unsigned int **}
+In file included from ../Core/Src/joystick.c:7:
+../Core/Inc/joystick.h:24:30: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint16_t **' {aka 'short unsigned int **'}
+   24 | void adcDataMaxMin(uint16_t *data);
+      |                    ~~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "Controller_ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Controller_ADC\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Controller_ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Controller_ADC.elf
+ 
+arm-none-eabi-size  Controller_ADC.elf 
+arm-none-eabi-objdump -h -S Controller_ADC.elf  > "Controller_ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+  33644	    136	   2424	  36204	   8d6c	Controller_ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Controller_ADC.list
+ 
+10:13:46 **** Incremental Build of configuration Debug for project Controller_ADC ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function '_write':
+../Core/Src/main.c:74:39: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit_IT' differ in signedness [-Wpointer-sign]
+   74 |         HAL_UART_Transmit_IT(&huart2, p, len);
+      |                                       ^
+      |                                       |
+      |                                       char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:747:82: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  747 | HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:119:9: warning: implicit declaration of function 'CLCD_INIT'; did you mean 'LCD_INIT'? [-Wimplicit-function-declaration]
+  119 |         CLCD_INIT();
+      |         ^~~~~~~~~
+      |         LCD_INIT
+../Core/Src/main.c:126:30: warning: passing argument 1 of 'adcData_Filt' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                 adcData_Filt(&adcVal_buf, &adcValfiltX, &adcValfiltY);
+      |                              ^~~~~~~~~~~
+      |                              |
+      |                              uint16_t (*)[3] {aka short unsigned int (*)[3]}
+In file included from ../Core/Src/main.c:30:
+../Core/Inc/joystick.h:20:29: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint16_t (*)[3]' {aka 'short unsigned int (*)[3]'}
+   20 | void adcData_Filt(uint16_t* buf, uint16_t* Xfilt, uint16_t* Yfilt);
+      |                   ~~~~~~~~~~^~~
+../Core/Src/main.c:127:17: warning: implicit declaration of function 'Button2_check' [-Wimplicit-function-declaration]
+  127 |                 Button2_check();
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c:129:17: warning: implicit declaration of function 'LCD_controller' [-Wimplicit-function-declaration]
+  129 |                 LCD_controller((int) adcValfiltX - 2040, (int) adcValfiltY - 2040,modeState);
+      |                 ^~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:206:6: warning: conflicting types for 'Button2_check'; have 'void()'
+  206 | void Button2_check() {
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:127:17: note: previous implicit declaration of 'Button2_check' with type 'void()'
+  127 |                 Button2_check();
+      |                 ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Controller_ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Controller_ADC\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Controller_ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Controller_ADC.elf
+ 
+arm-none-eabi-size  Controller_ADC.elf 
+arm-none-eabi-objdump -h -S Controller_ADC.elf  > "Controller_ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+  33356	    136	   2424	  35916	   8c4c	Controller_ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Controller_ADC.list
+ 
+10:35:40 **** Incremental Build of configuration Debug for project Controller_ADC ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/joystick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/joystick.d" -MT"Core/Src/joystick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/joystick.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/joystick.c: In function 'adcData_Filt':
+../Core/Src/joystick.c:22:23: warning: passing argument 1 of 'adcDataMaxMin' from incompatible pointer type [-Wincompatible-pointer-types]
+   22 |         adcDataMaxMin(&Xfilt);
+      |                       ^~~~~~
+      |                       |
+      |                       uint16_t ** {aka short unsigned int **}
+In file included from ../Core/Src/joystick.c:7:
+../Core/Inc/joystick.h:24:30: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint16_t **' {aka 'short unsigned int **'}
+   24 | void adcDataMaxMin(uint16_t *data);
+      |                    ~~~~~~~~~~^~~~
+../Core/Src/joystick.c:23:23: warning: passing argument 1 of 'adcDataMaxMin' from incompatible pointer type [-Wincompatible-pointer-types]
+   23 |         adcDataMaxMin(&Yfilt);
+      |                       ^~~~~~
+      |                       |
+      |                       uint16_t ** {aka short unsigned int **}
+In file included from ../Core/Src/joystick.c:7:
+../Core/Inc/joystick.h:24:30: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint16_t **' {aka 'short unsigned int **'}
+   24 | void adcDataMaxMin(uint16_t *data);
+      |                    ~~~~~~~~~~^~~~
+../Core/Src/main.c: In function '_write':
+../Core/Src/main.c:74:39: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit_IT' differ in signedness [-Wpointer-sign]
+   74 |         HAL_UART_Transmit_IT(&huart2, p, len);
+      |                                       ^
+      |                                       |
+      |                                       char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:747:82: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  747 | HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:119:9: warning: implicit declaration of function 'CLCD_INIT'; did you mean 'LCD_INIT'? [-Wimplicit-function-declaration]
+  119 |         CLCD_INIT();
+      |         ^~~~~~~~~
+      |         LCD_INIT
+../Core/Src/main.c:126:30: warning: passing argument 1 of 'adcData_Filt' from incompatible pointer type [-Wincompatible-pointer-types]
+  126 |                 adcData_Filt(&adcVal_buf, &adcValfiltX, &adcValfiltY);
+      |                              ^~~~~~~~~~~
+      |                              |
+      |                              uint16_t (*)[3] {aka short unsigned int (*)[3]}
+In file included from ../Core/Src/main.c:30:
+../Core/Inc/joystick.h:20:29: note: expected 'uint16_t *' {aka 'short unsigned int *'} but argument is of type 'uint16_t (*)[3]' {aka 'short unsigned int (*)[3]'}
+   20 | void adcData_Filt(uint16_t* buf, uint16_t* Xfilt, uint16_t* Yfilt);
+      |                   ~~~~~~~~~~^~~
+../Core/Src/main.c:127:17: warning: implicit declaration of function 'Button2_check' [-Wimplicit-function-declaration]
+  127 |                 Button2_check();
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c:129:17: warning: implicit declaration of function 'LCD_controller' [-Wimplicit-function-declaration]
+  129 |                 LCD_controller((int) adcValfiltX - 2040, (int) adcValfiltY - 2040,modeState);
+      |                 ^~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:206:6: warning: conflicting types for 'Button2_check'; have 'void()'
+  206 | void Button2_check() {
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:127:17: note: previous implicit declaration of 'Button2_check' with type 'void()'
+  127 |                 Button2_check();
+      |                 ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Controller_ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Controller_ADC\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Controller_ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Controller_ADC.elf
+ 
+arm-none-eabi-size  Controller_ADC.elf 
+arm-none-eabi-objdump -h -S Controller_ADC.elf  > "Controller_ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+  29472	    120	   2400	  31992	   7cf8	Controller_ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Controller_ADC.list
+ 

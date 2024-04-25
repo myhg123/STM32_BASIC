@@ -1,0 +1,8 @@
+../Core/Src/buzzer.c:12:6:initSound	16	static
+../Core/Src/buzzer.c:17:6:setSound	16	static
+../Core/Src/buzzer.c:22:6:hornSound	16	static
+../Core/Src/buzzer.c:26:6:safeSound	16	static
+../Core/Src/buzzer.c:62:6:stopSound	16	static
+../Core/Src/buzzer.c:66:6:manualModeSound	16	static
+../Core/Src/buzzer.c:77:6:autoModeSound	16	static
+../Core/Src/buzzer.c:88:6:suddenlyStopSound	16	static

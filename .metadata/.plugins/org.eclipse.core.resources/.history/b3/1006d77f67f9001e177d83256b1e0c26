@@ -1,0 +1,16 @@
+/*
+ * adcData.c
+ *
+ *  Created on: Apr 13, 2024
+ *      Author: myhg1
+ */
+#include "adcData.h"
+
+uint8_t adcData_Chksum(uint8_t* data, uint8_t len){
+	uint8_t chksum=0;
+	for(int i=0; i<len;i++){
+		chksum += data[i];
+	}
+
+	return (chksum==data[6]);
+}

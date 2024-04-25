@@ -1,0 +1,10 @@
+17:51:21 **** Build of configuration Debug for project bluetooth_module ****
+make -j16 all 
+arm-none-eabi-size  bluetooth_module.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12484	     20	   1788	  14292	   37d4	bluetooth_module.elf
+Finished building: default.size.stdout
+ 
+
+17:51:21 Build Finished. 0 errors, 0 warnings. (took 423ms)
+

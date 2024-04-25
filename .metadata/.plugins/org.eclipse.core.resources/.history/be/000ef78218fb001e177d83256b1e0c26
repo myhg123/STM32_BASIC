@@ -1,0 +1,66 @@
+/*
+ * autoMove.c
+ *
+ *  Created on: Apr 15, 2024
+ *      Author: kccistc
+ */
+
+#include "autoMove.h"
+#include "ultraSonic.h"
+#include "Motor.h"
+
+void initAutoMove(TIM_HandleTypeDef *htim4) {
+	MoveStop(htim4);
+}
+
+void ultraSonicAutoMove(TIM_HandleTypeDef *htim4, TIM_HandleTypeDef *htim11,
+		TIM_HandleTypeDef *htim2) {
+	static uint16_t L_dist, C_dist, R_dist;
+	L_dist = getDistance_L(htim11, htim2);
+	C_dist = getDistance_C(htim11, htim2);
+	R_dist = getDistance_R(htim11, htim2);
+	if (C_dist <= 15) {
+		while (C_dist < 50) {
+			leftDriveBackward();
+			rightDriveBackward();
+			htim4->Instance->CCR1 = 32800;
+			htim4->Instance->CCR2 = 40000;
+			C_dist = getDistance_C(htim11, htim2);
+			HAL_Delay(1);
+		}
+		//left object
+		while (C_dist < 130) {
+			L_dist = getDistance_L(htim11, htim2);
+			C_dist = getDistance_C(htim11, htim2);
+			R_dist = getDistance_R(htim11, htim2);
+			if (L_dist < R_dist) {
+				leftDriveForward();
+				rightDriveBackward();
+			}
+			else {
+				leftDriveBackward();
+				rightDriveForward();
+			}
+			htim4->Instance->CCR1 = 16400;
+			htim4->Instance->CCR2 = 20000;
+			HAL_Delay(1);
+		}
+
+	}
+
+	else
+		goMove(htim4);
+
+//	if (C_dist <= 130 && C_dist > 30) {
+//		//left object
+//		if (L_dist < R_dist && R_dist > 50) {
+//
+//		}
+//		//right object
+//		else if (L_dist >= R_dist && L_dist > 50) {
+//			leftDriveForward();
+//			htim4->Instance->CCR1 = 45000;
+//		}
+//	}
+}
+

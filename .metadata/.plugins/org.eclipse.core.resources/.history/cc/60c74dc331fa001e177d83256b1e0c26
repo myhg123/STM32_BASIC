@@ -1,0 +1,28 @@
+/*
+ * Motor.c
+ *
+ *  Created on: Apr 14, 2024
+ *      Author: myhg1
+ */
+#include "Motor.h"
+
+
+void rightDriveForward(){
+	HAL_GPIO_WritePin(Left_IN3_GPIO_Port, Left_IN3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Left_IN4_GPIO_Port, Left_IN4_Pin, GPIO_PIN_SET);
+}
+
+void leftDriveForward(){
+	HAL_GPIO_WritePin(Right_IN1_GPIO_Port, Right_IN1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Right_IN2_GPIO_Port, Right_IN2_Pin, GPIO_PIN_RESET);
+}
+
+void rightDriveBackward(){
+	HAL_GPIO_WritePin(Left_IN3_GPIO_Port, Left_IN3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(Left_IN4_GPIO_Port, Left_IN4_Pin, GPIO_PIN_RESET);
+}
+
+void leftDriveBackward(){
+	HAL_GPIO_WritePin(Right_IN1_GPIO_Port, Right_IN1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(Right_IN2_GPIO_Port, Right_IN2_Pin, GPIO_PIN_SET);
+}

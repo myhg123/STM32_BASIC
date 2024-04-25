@@ -1,0 +1,26 @@
+/*
+ * adcData.c
+ *
+ *  Created on: Apr 13, 2024
+ *      Author: myhg1
+ */
+#include "adcData.h"
+
+rxData_t controlData;
+
+uint8_t adcData_Chksum(uint8_t* data, uint8_t len){
+	uint8_t chksum=0;
+	for(int i=0; i<len-1;i++){
+		chksum += data[i];
+	}
+
+	return (chksum==data[6]);
+}
+
+void adcData_Pasing(uint8_t* data){
+	controlData.XData = ((data[2]<<8)|data[3])&0x0fff;
+	controlData.YData = ((data[4]<<8)|data[5])&0x0fff;
+	controlData.YData = 4096-controlData.YData;
+	controlData.XData -= 25;
+	controlData.YData += 20
+}

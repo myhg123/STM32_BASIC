@@ -1,0 +1,2 @@
+../Core/Src/AT_Command.c:41:11:getCommand	16	static
+../Core/Src/AT_Command.c:50:9:getResLength	16	static

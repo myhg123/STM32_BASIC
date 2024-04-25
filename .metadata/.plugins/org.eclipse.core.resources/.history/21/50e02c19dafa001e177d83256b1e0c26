@@ -1,0 +1,28 @@
+/*
+ * Button.c
+ *
+ *  Created on: Apr 15, 2024
+ *      Author: myhg1
+ */
+#include "Button.h"
+
+void stateChange(uint8_t* flag, uint8_t* modeState, uint8_t* stateData){
+	if (*flag = 1) {
+		*modeState++;
+		switch (*modeState) {
+		case STOP:
+			*stateData = 0x10;
+			break;
+		case MANUAL:
+			*stateData = 0x20;
+			break;
+		case AUTO:
+			*stateData = 0x30;
+			break;
+		default:
+			modeState = STOP;
+			break;
+		}
+		*flag=0;
+	}
+}

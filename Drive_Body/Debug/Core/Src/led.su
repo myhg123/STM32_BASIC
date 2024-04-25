@@ -1,0 +1,5 @@
+../Core/Src/led.c:10:6:LED_init	8	static
+../Core/Src/led.c:14:6:LED_OFF	8	static
+../Core/Src/led.c:20:6:manualModeLed	8	static
+../Core/Src/led.c:26:6:autoModeLed	8	static
+../Core/Src/led.c:32:6:suddenlyModeLed	8	static

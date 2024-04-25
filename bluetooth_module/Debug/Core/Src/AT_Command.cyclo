@@ -1,0 +1,2 @@
+../Core/Src/AT_Command.c:41:11:getCommand	1
+../Core/Src/AT_Command.c:50:9:getResLength	1

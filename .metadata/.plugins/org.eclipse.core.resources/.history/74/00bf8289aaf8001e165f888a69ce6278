@@ -1,0 +1,16 @@
+/*
+ * joystick.h
+ *
+ *  Created on: Apr 12, 2024
+ *      Author: myhg1
+ */
+
+#ifndef INC_JOYSTICK_H_
+#define INC_JOYSTICK_H_
+
+#include "main.h"
+
+void adcDataMaxMin(uint32_t *data);
+long map(long x, long in_min, long in_max, long out_min, long out_max);
+
+#endif /* INC_JOYSTICK_H_ */

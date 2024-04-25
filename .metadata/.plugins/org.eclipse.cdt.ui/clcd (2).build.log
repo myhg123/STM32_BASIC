@@ -1,0 +1,13 @@
+10:31:48 **** Incremental Build of configuration Debug for project clcd (2) ****
+make -j16 all 
+arm-none-eabi-size  clcd\ (2).elf 
+arm-none-eabi-objdump -h -S clcd\ (2).elf  > "clcd (2).list"
+c:/st/stm32cubeide_1.14.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.make.win32_2.1.101.202401061624/tools/bin/sh: syntax error: unexpected "("
+make: *** [makefile:69: default.size.stdout] Error 2
+make: *** Waiting for unfinished jobs....
+c:/st/stm32cubeide_1.14.1/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.make.win32_2.1.101.202401061624/tools/bin/sh: syntax error: unexpected "("
+make: *** [makefile:74: clcd (2).list] Error 2
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+10:31:48 Build Failed. 3 errors, 0 warnings. (took 315ms)
+

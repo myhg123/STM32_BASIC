@@ -1,0 +1,20 @@
+/*
+ * Motor.h
+ *
+ *  Created on: Apr 14, 2024
+ *      Author: myhg1
+ */
+
+#ifndef INC_MOTOR_H_
+#define INC_MOTOR_H_
+#include "main.h"
+
+void manualDriveStart(int16_t xAxis, int16_t yAxis);
+
+void rightDriveForward();
+void leftDriveForward();
+void rightDriveBackward();
+void leftDriveBackward();
+
+
+#endif /* INC_MOTOR_H_ */

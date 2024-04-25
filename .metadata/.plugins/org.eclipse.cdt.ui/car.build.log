@@ -1,0 +1,10 @@
+17:51:21 **** Build of configuration Debug for project car ****
+make -j16 all 
+arm-none-eabi-size  car.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23484	    112	   2592	  26188	   664c	car.elf
+Finished building: default.size.stdout
+ 
+
+17:51:22 Build Finished. 0 errors, 0 warnings. (took 389ms)
+

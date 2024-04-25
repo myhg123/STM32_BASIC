@@ -1,0 +1,10 @@
+20:22:50 **** Incremental Build of configuration Debug for project Z_Drone_1-1_Debug_LED ****
+make -j16 all 
+arm-none-eabi-size  Z_Drone_1-1_Debug_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5972	     20	   1572	   7564	   1d8c	Z_Drone_1-1_Debug_LED.elf
+Finished building: default.size.stdout
+ 
+
+20:22:51 Build Finished. 0 errors, 0 warnings. (took 317ms)
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\switch"/>
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Bluetooth1_test"/>
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\BlueTooth"/>
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Double_Motor"/>
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Bluetooth2_test"/>
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Controller_ADC"/>
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Controller"/>
+			<item value="C:\Users\myhg1\Desktop\Harman_Arm\stm32l152ret6_HM10_Master-master\stm32l152ret6_HM10_Master"/>
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\clcd"/>
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\clcd (2)"/>
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Z_Drone_1-3_Debug_UART"/>
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\Z_Drone_1-2_Debug_Buzzer"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+			<item value="C:\Users\myhg1\Desktop\clcd.zip"/>
+		</list>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\myhg1\STM32CubeIDE\workspace_1.14.1\clcd_2"/>
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="587"/>
+		<item key="DIALOG_Y_ORIGIN" value="269"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+</section>

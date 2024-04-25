@@ -1,0 +1,24 @@
+/*
+ * Motor.h
+ *
+ *  Created on: Apr 14, 2024
+ *      Author: myhg1
+ */
+
+#ifndef INC_MOTOR_H_
+#define INC_MOTOR_H_
+#include "main.h"
+#include <stdlib.h>
+
+void manualDriveStart(TIM_HandleTypeDef* htim4, int16_t xAxis, int16_t yAxis);
+
+void MoveStop(TIM_HandleTypeDef* htim);
+
+void rightDriveForward();
+void leftDriveForward();
+void rightDriveBackward();
+void leftDriveBackward();
+long map(long x, long in_min, long in_max, long out_min, long out_max);
+
+
+#endif /* INC_MOTOR_H_ */

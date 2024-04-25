@@ -1,0 +1,5 @@
+../Core/Src/uart.c:20:6:initUart	1
+../Core/Src/uart.c:26:6:HAL_UART_RxCpltCallback	1
+../Core/Src/uart.c:33:9:getChar	2
+../Core/Src/uart.c:42:6:binaryTransmit	2
+../Core/Src/uart.c:62:5:_write	1
